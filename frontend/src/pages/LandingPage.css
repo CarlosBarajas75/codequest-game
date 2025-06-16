@@ -1,0 +1,243 @@
+.landing-content, .register-content, .login-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  overflow-y: auto;
+  background: transparent !important;
+  box-shadow: none;
+  border: none !important;
+}
+
+body, html, #root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: url('../assets/fondo.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .landing-content, .register-content, .login-content {
+    padding: 0.5rem;
+  }
+}
+
+.landing-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 700px;
+  width: 100%;
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Mejoras visuales para el fondo del contenedor de login y registro */
+.register-content, .login-content {
+  background: rgba(30, 34, 54, 0.55); /* Fondo oscuro translúcido */
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border: 1.5px solid rgba(255, 215, 100, 0.18);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  max-width: 1100px; /* Aumenta el ancho máximo */
+  width: 100%;
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Ajuste para formularios internos */
+.register-content form, .login-content form {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+.register-logo, .login-logo, .landing-logo {
+  width: clamp(120px, 25vw, 320px);
+  max-width: 90vw;
+  margin-bottom: 1.5rem;
+}
+
+.landing-logo {
+  width: 240px;
+  margin-bottom: 1.5rem;
+}
+
+.rpg-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: #ffe6a7;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px #000a, 0 0 16px #bfa76a99;
+  line-height: 1.3;
+}
+
+.rpg-subtitle {
+  color: #e0d6c3;
+  font-size: 1.15rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 4px #0008;
+  line-height: 1.6;
+}
+
+.landing-buttons-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.landing-btn {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+.landing-btn.left {
+  width: 210px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  filter: drop-shadow(0 0 12px #ffe6a7cc);
+}
+.landing-btn.left:hover {
+  transform: scale(1.06) rotate(-2deg);
+  filter: drop-shadow(0 0 24px #ffe6a7cc);
+}
+
+.landing-btn.right {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #2d2d2d;
+  border: 2px solid #bfa76a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-left: 0;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px #0008;
+}
+.landing-btn.right:hover {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 8px 32px #ffe6a7cc;
+}
+
+@keyframes logo-magic {
+  0% {
+    transform: scale(1) rotate(-2deg) translateY(0);
+    filter: drop-shadow(0 0 8px #ffe6a7cc);
+  }
+  20% {
+    transform: scale(1.04) rotate(2deg) translateY(-6px);
+    filter: drop-shadow(0 0 16px #ffe6a7cc);
+  }
+  40% {
+    transform: scale(0.98) rotate(-3deg) translateY(2px);
+    filter: drop-shadow(0 0 12px #ffe6a7cc);
+  }
+  60% {
+    transform: scale(1.03) rotate(1deg) translateY(-4px);
+    filter: drop-shadow(0 0 18px #ffe6a7cc);
+  }
+  80% {
+    transform: scale(1.01) rotate(-1deg) translateY(3px);
+    filter: drop-shadow(0 0 10px #ffe6a7cc);
+  }
+  100% {
+    transform: scale(1) rotate(-2deg) translateY(0);
+    filter: drop-shadow(0 0 8px #ffe6a7cc);
+  }
+}
+
+.animate-logo-magic {
+  animation: logo-magic 3.5s infinite ease-in-out;
+}
+
+@keyframes logo-magic-slow {
+  0% {
+    transform: scale(1) rotate(-2deg) translateY(0);
+    filter: drop-shadow(0 0 8px #ffe6a7cc);
+  }
+  20% {
+    transform: scale(1.04) rotate(2deg) translateY(-6px);
+    filter: drop-shadow(0 0 16px #ffe6a7cc);
+  }
+  40% {
+    transform: scale(0.98) rotate(-3deg) translateY(2px);
+    filter: drop-shadow(0 0 12px #ffe6a7cc);
+  }
+  60% {
+    transform: scale(1.03) rotate(1deg) translateY(-4px);
+    filter: drop-shadow(0 0 18px #ffe6a7cc);
+  }
+  80% {
+    transform: scale(1.01) rotate(-1deg) translateY(3px);
+    filter: drop-shadow(0 0 10px #ffe6a7cc);
+  }
+  100% {
+    transform: scale(1) rotate(-2deg) translateY(0);
+    filter: drop-shadow(0 0 8px #ffe6a7cc);
+  }
+}
+
+.animate-logo-magic-slow {
+  animation: logo-magic-slow 8s infinite ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .landing-content {
+    padding: 1.2rem 0.5rem;
+    max-width: 98vw;
+    border-radius: 1rem;
+  }
+  .rpg-title {
+    font-size: 1.2rem;
+  }
+  .rpg-subtitle {
+    font-size: 0.95rem;
+  }
+  .landing-btn.left {
+    width: 120px;
+  }
+  .landing-btn.right {
+    width: 55px;
+    height: 55px;
+  }
+  .register-content, .login-content {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 1.2rem;
+  }
+}
